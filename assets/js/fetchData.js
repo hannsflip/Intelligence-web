@@ -1,4 +1,4 @@
-let = $accordion = document.getElementById("accordion");
+let = $each_news = document.getElementById("each_news");
 
 let ciaData = null;
 
@@ -11,10 +11,10 @@ fetch(
   .then((data) => {
     // Work with JSON data here
     ciaData = data;
-    cards = ciaData.map(
+    news_Bloc = ciaData.map(
       (x, idx) => `
         <div>
-            <h5 class="font-weight-bold " data-parent="#accordion">
+            <h5 class="font-weight-bold " data-parent="#each_news">
                 ${x.title}
             </h5>
             <div class=" font-weight-normal card-body">
@@ -27,8 +27,8 @@ fetch(
         </div>
     `
     );
-    for (i = 0; i < cards.length; i++) {
-      $accordion.innerHTML += cards[i];
+    for (i = 0; i < news_Bloc.length; i++) {
+      $each_news.innerHTML += news_Bloc[i];
     }
   })
   .catch((err) => {
