@@ -3,7 +3,7 @@ let = $each_news = document.getElementById("each_news");
 let ciaData = null;
 
 fetch(
-  "../assets/cia.json"
+  "https://app.zyte.com/api/v2/datasets/o8pq8fpHkPK/download?format=json"
 )
   .then((response) => {
     return response.json();
